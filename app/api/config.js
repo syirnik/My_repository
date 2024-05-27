@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://my-domen.nomoredomainswork.ru/api' 
