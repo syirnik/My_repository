@@ -1,5 +1,5 @@
 const gamesRouter = require("./games");
-
+const gamesRouter = require("../routes/games")
 const apiRouter = require("express").Router();
 apiRouter.use("/api", gamesRouter);
 
