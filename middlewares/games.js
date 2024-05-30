@@ -1,3 +1,4 @@
+const games = require("../models/game")
 const createGame = async (req, res, next) => {
   console.log("POST /games");
   try {
@@ -5,15 +6,13 @@ const createGame = async (req, res, next) => {
     req.game = await games.create(req.body);
     next();
   } catch (error) {
-      res.setHeader("Content-Type", "application/json");
-        res.status(400).send(JSON.stringify({ message: "Ошибка создания игры" }));
+    res.status(400).send({ message: "Error creating game" });
   }
 };
 
 // middlewares/games.js
 
 const findAllGames = async (req, res, next) => {
-  // Поиск всех игр в проекте по заданной категории
   if(req.query["categories.name"]) { 
     req.gamesArray = await games.findGameByCategory(req.query["categories.name"]);
     next();
@@ -135,4 +134,15 @@ if (Object.keys(req.body).length === 1 && req.body.users) {
 }
 next();
 };
-module.exports = checkIsVoteRequest ,createGame, updateGame ,findAllGames, checkIsGameExists ,deleteGame, checkEmptyFields, checkIfCategoriesAvaliable, checkIfUsersAreSafe, findGameById
+module.exports = {
+  checkIfUsersAreSafe,
+  checkIsGameExists,
+  checkIsVoteRequest,
+  createGame,
+  updateGame,
+  findAllGames,
+  deleteGame,
+  checkEmptyFields,
+  checkIfCategoriesAvaliable,
+  findGameById
+};
