@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const apiRouter =require("./routes/apiRouter")
+const apiRouter =require("./routes/api")
 const connectToDatabase = require('./database/connect');
 const cors = require('./middlewares/cors');
 const pagesRouter= require("./routes/pages")
@@ -26,8 +26,8 @@ app.use(
   cors,
   cookieParser(),
   bodyParser.json(),
-  pagesRouter, // Добавляем роутер для страниц
   apiRouter,
+  pagesRouter,
   express.static(path.join(__dirname, "public"))
 );
 
