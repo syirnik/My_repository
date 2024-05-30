@@ -31,11 +31,6 @@ app.use(
   express.static(path.join(__dirname, "public"))
 );
 
-// Остальной код
-
-// Остальной код
-
-// Запуск приложения
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
