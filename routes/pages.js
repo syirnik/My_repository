@@ -1,3 +1,4 @@
+// routes/pages.js
 const pagesRouter = require("express").Router();
 const { checkCookiesJWT, checkAuth } = require("../middlewares/auth");
 const { sendIndex, sendDashboard } = require("../controllers/auth");

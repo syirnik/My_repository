@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const apiRouter =require("./routes/apiRouter")
+const apiRouter =require("./routes/api")
 const connectToDatabase = require('./database/connect');
 const cors = require('./middlewares/cors');
 
@@ -25,8 +25,8 @@ app.use(
   cors,
   cookieParser(),
   bodyParser.json(),
-  pagesRouter, // Добавляем роутер для страниц
   apiRouter,
+  pagesRouter,
   express.static(path.join(__dirname, "public"))
 );
 
@@ -35,4 +35,6 @@ app.use(
 // Остальной код
 
 // Запуск приложения
-app.listen(PORT);
+app.listen(PORT, () => {
+  console.log(`http://localhost:${PORT}`);
+});

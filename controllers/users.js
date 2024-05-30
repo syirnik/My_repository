@@ -1,7 +1,6 @@
-// controllers/users.js
-const sendUserCreated = (req, res) => {
+const sendAllUsers = (req, res) => {
   res.setHeader("Content-Type", "application/json");
-  res.end(JSON.stringify(req.user));
+  res.end(JSON.stringify(req.usersArray));
 };
 
 const sendUserById = (req, res) => {
@@ -9,25 +8,31 @@ const sendUserById = (req, res) => {
   res.end(JSON.stringify(req.user));
 };
 
-usersRouter.get("/users/:id", findUserById, sendUserById);
+const sendUserCreated = (req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  res.end(JSON.stringify(req.user));
+};
 
-const deleteUser = async (req, res, next) => {
-  console.log("DELETE /users/:id");
-  try {
-    req.user = await users.findByIdAndDelete(req.params.id);
-    next();
-  } catch (error) {
-    res.setHeader("Content-Type", "application/json");
-        res.status(400).send(JSON.stringify({ message: "Ошибка удаления пользователя" }));
-  }
+const sendUserUpdated = (req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  res.end("User updated");
 };
 
 const sendUserDeleted = (req, res) => {
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify(req.user));
 };
+
 const sendMe = (req, res) => {
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify(req.user));
 };
-module.exports = sendMe ,sendUserCreated, sendUserById, deleteUser, sendUserDeleted
+
+module.exports = {
+  sendAllUsers,
+  sendUserById,
+  sendUserCreated,
+  sendUserUpdated,
+  sendUserDeleted,
+  sendMe,
+};
