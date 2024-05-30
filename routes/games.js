@@ -18,7 +18,8 @@ gamesRouter.get('/games', findAllGames, sendAllGames);
 
 // Маршрут для создания игры
 gamesRouter.post(
-  "/games",
+  '/games',
+  findAllGames,
   checkIsGameExists,
   checkIfCategoriesAvaliable,
   checkEmptyFields,
