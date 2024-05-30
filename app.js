@@ -5,6 +5,7 @@ const path = require('path');
 const apiRouter =require("./routes/apiRouter")
 const connectToDatabase = require('./database/connect');
 const cors = require('./middlewares/cors');
+const pagesRouter= require("./routes/pages")
 
 const app = express();
 const PORT = 3001;
@@ -35,4 +36,6 @@ app.use(
 // Остальной код
 
 // Запуск приложения
-app.listen(PORT);
+app.listen(PORT, () => {
+  console.log(`http://localhost:${PORT}`);
+});
