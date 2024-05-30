@@ -23,4 +23,4 @@ const sendCategoryDeleted = (req, res) => {
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify(req.category));
 };
-module.exports = sendCategoryCreated, sendCategoryById, deleteCategory, sendCategoryDeleted
+module.exports = { sendCategoryCreated, sendCategoryById, deleteCategory, sendCategoryDeleted }

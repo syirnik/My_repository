@@ -30,4 +30,4 @@ const sendMe = (req, res) => {
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify(req.user));
 };
-module.exports = sendMe ,sendUserCreated, sendUserById, deleteUser, sendUserDeleted
+module.exports = { sendMe ,sendUserCreated, sendUserById, deleteUser, sendUserDeleted }

@@ -52,4 +52,4 @@ const checkIfCategoriesAvaliable = async (req, res, next) => {
     next();
   }
 };
-module.exports = createCategory, checkIfCategoriesAvaliable ,checkIsCategoryExists, findCategoryById
+module.exports = { createCategory, checkIfCategoriesAvaliable ,checkIsCategoryExists, findCategoryById, findAllCategories }

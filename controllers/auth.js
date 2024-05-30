@@ -28,7 +28,7 @@ const login = (req, res) => {
             })
       // Остальной код
   };
-  const path = require("path");
+  // const path = require("path");
 // Импорты и другие функции-контроллеры
 
 const sendIndex = (req, res) => {
@@ -50,3 +50,4 @@ const sendDashboard = (req, res) => {
   module.exports = login, sendIndex, sendDashboard
 
   // controllers/auth.js
+module.exports = { login, sendIndex, sendDashboard }

@@ -85,4 +85,4 @@ const checkIfUsersAreSafe = async (req, res, next) => {
   }
 };
 
-module.exports = hashPassword ,findAllUsers ,checkIfUsersAreSafe ,createUser, findUserById, checkIsUserExists ,checkEmptyNameAndEmailAndPassword, checkEmptyNameAndEmail
+module.exports = { hashPassword ,findAllUsers ,checkIfUsersAreSafe ,createUser, findUserById, checkIsUserExists ,checkEmptyNameAndEmailAndPassword, checkEmptyNameAndEmail }

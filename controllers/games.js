@@ -21,4 +21,4 @@ res.setHeader("Content-Type", "application/json");
 // Отправляем на клиент найденный и удалённый элемент из базы данных
 res.end(JSON.stringify(req.game));
 };
-module.exports  = sendGameCreated, sendGameDeleted, sendGameById, sendGameUpdated
+module.exports  = { sendGameCreated, sendGameDeleted, sendGameById, sendGameUpdated }
