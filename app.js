@@ -5,6 +5,7 @@ const path = require('path');
 const apiRouter =require("./routes/api")
 const connectToDatabase = require('./database/connect');
 const cors = require('./middlewares/cors');
+const pagesRouter = require("./routes/pages")
 
 const app = express();
 const PORT = 3001;
