@@ -12,8 +12,6 @@ const checkAuth = require("../middlewares/auth.js")
 gamesRouter.get('/games', findAllGames, sendAllGames);
 
 
-// Другие импорты
-const { checkAuth } = require("../middlewares/auth.js");
 
 // Маршрут для создания игры
 gamesRouter.post(
