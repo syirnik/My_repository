@@ -9,7 +9,7 @@ const findGameById = require("../middlewares/games")
 const checkIsGameExists = require("../middlewares/games")
 const checkIfCategoriesAvaliable = require("../middlewares/categories")
 const checkIfUsersAreSafe = require("../middlewares/users")
-
+const checkIsVoteRequest = require("../middlewares/games.js")
 gamesRouter.get('/games', findAllGames, sendAllGames);
 
 
